@@ -65,7 +65,6 @@ while True:
     
     # Update the previous frame to be the current grayscale frame for the next loop iteration
     im1 = im2_gray.copy()
-
     # Wait for 10 ms for a key press
     # If 'ESC' key (ASCII 27) is pressed, exit the loop
     if cv2.waitKey(10) == 27:
