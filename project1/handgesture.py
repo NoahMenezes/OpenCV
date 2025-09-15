@@ -63,8 +63,11 @@ while True:
         if dist < 20:
             pyautogui.click()
 
-    # Show the webcam feed with drawings
-    cv2.imshow("Hand movement video capture", image)
+    # Resize the display output for better visibility
+    zoom = 1.5  # You can increase this to make it even larger
+    resized_image = cv2.resize(image, (int(image_width * zoom), int(image_height * zoom)))
+    cv2.imshow("Hand movement video capture", resized_image)
+
 
     key = cv2.waitKey(1)  # More responsive
     if key == 27:
