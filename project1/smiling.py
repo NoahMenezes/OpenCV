@@ -7,7 +7,7 @@ import math
 LEFT_CORNER_ID = 61
 RIGHT_CORNER_ID = 291
 # You may need to adjust this threshold based on your camera and distance
-SMILE_THRESHOLD = 90 
+SMILE_THRESHOLD = 80 
 
 # --- Initialization ---
 mp_face_mesh = mp.solutions.face_mesh
