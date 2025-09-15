@@ -80,7 +80,8 @@ while True:
     key = cv2.waitKey(10)
     if key == 27:
         break
-
+    if cv2.getWindowProperty("Smile Detector", cv2.WND_PROP_VISIBLE) < 1:
+        break
 # --- Cleanup ---
 camera.release()
 cv2.destroyAllWindows()
