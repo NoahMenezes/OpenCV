@@ -49,6 +49,12 @@ while True:
                     cv2.circle(img=image, center=(x, y), radius=8, color=(0, 0, 255), thickness=3)
                     x2=x
                     y2=y
+        dist =pow((x2-x1),2)+pow(pow((y2-y1),2),0.5)//4
+        cv2.line(image, (x1,y1), (x2,y2), (0,255, 0), 5)
+        if dist>50:
+            pyautogui.press("Volumeup")
+        else:
+            pyautogui.press("Volumedown")
     cv2.imshow("Hand Volume Control", image)
     
     key = cv2.waitKey(10)
