@@ -17,14 +17,16 @@ while True:
         for landmark_point in one_face_landmark_points[474:478]:
             x=int(landmark_point.x*window_w)
             y=int(landmark_point.y*window_h)
-            print(x,y)
             cv2.circle(image, (x,y), 3, (0,0,255))
         left_eye=[one_face_landmark_points[145], one_face_landmark_points[159]]
         for landmark_point in left_eye:
             x=int(landmark_point.x*window_w)
             y=int(landmark_point.y*window_h)
             print(x,y)
-            cv2.circle(image, (x,y), 3, (0,0,255))
+            cv2.circle(image, (x,y), 3, (0,255,255))
+        if(left_eye[0].y-left_eye[1].y<0.01):
+            pyautogui.click()
+            pyautogui.sleep(2)
     cv2.imshow("Eye controlled mouse", image)
     key=cv2.waitKey(100)
     if key==27:
