@@ -3,7 +3,7 @@ import threading
 import pygame.midi
 import time
 from cvzone.HandTrackingModule import HandDetector
-
+# https://github.com/pramzie/Air-Piano
 # 🎹 Initialize Pygame MIDI
 pygame.midi.init()
 player = pygame.midi.Output(0)
