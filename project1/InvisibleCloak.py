@@ -54,6 +54,7 @@ while(cap.isOpened()):
     # Segment the non-cloak part of the current frame
     res2=cv2.bitwise_and(img, img, mask=mask2)
     
+   
     # final_output = cv2.addWeighted(res1,1,res2,1,0)
     # cv2.imshow('Magic !!!',final_output)
     # if cv2.waitKey(1) == 13:
@@ -67,7 +68,8 @@ while(cap.isOpened()):
     
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
+    if cv2.getWindowProperty("Invisible Cloak", cv2.WND_PROP_VISIBLE) < 1:
+        break
 cap.release()
 out.release()
 cv2.destroyAllWindows()
