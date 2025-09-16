@@ -27,22 +27,16 @@ while(cap.isOpened()):
     
     hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
     
-    # Range for lower red
-    lower_red=np.array([0,120,70])
-    upper_red=np.array([10,255,255])
-    mask1=cv2.inRange(hsv,lower_red, upper_red)
-    
-    # Range for upper red
-    lower_red=np.array([170,120,70])
-    upper_red=np.array([180,255,255])
-    mask2=cv2.inRange(hsv,lower_red, upper_red)
-    
-    # Combine the masks
-    mask1=mask1+mask2
+    # --- ADD THIS NEW BLOCK ---
+    # Range for blue color
+    lower_blue = np.array([100, 150, 0])
+    upper_blue = np.array([140, 255, 255])
+    mask1 = cv2.inRange(hsv, lower_blue, upper_blue)
+    # --- END OF NEW BLOCK ---
     
     # Define the kernel once
     kernel = np.ones((3,3), np.uint8)
-
+    
     # Use the kernel in the morphology functions
     mask1=cv2.morphologyEx(mask1, cv2.MORPH_OPEN, kernel, iterations=2)
     mask1=cv2.morphologyEx(mask1, cv2.MORPH_DILATE, kernel, iterations=1)
