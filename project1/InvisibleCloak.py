@@ -29,9 +29,10 @@ while(cap.isOpened()):
     
     # --- ADD THIS NEW BLOCK ---
     # Range for blue color
-    lower_blue = np.array([100, 150, 0])
-    upper_blue = np.array([140, 255, 255])
-    mask1 = cv2.inRange(hsv, lower_blue, upper_blue)
+    # HSV range for yellow
+    lower_yellow = np.array([20, 100, 100])
+    upper_yellow = np.array([30, 255, 255])
+    mask1 = cv2.inRange(hsv, lower_yellow, upper_yellow)
     # --- END OF NEW BLOCK ---
     
     # Define the kernel once
